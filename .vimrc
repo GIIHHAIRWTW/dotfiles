@@ -36,12 +36,6 @@ au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g
 
 
 
-noremap i k
-noremap k j
-noremap j h
-noremap n i
-noremap N I
-
 noremap = nzz
 noremap - Nzz
 noremap <LEADER> :nohlsearch
@@ -58,9 +52,9 @@ map 67 :set splitright<CR>:vsplit<CR>
 map 76 :set nosplitbelow<CR>:split<CR>
 map 77 :set splitbelow<CR>:split<CR>
 
-map <LEADER>i <C-w>k
-map <LEADER>k <C-w>j
-map <LEADER>j <C-w>h
+map <LEADER>k <C-w>k
+map <LEADER>j <C-w>j
+map <LEADER>h <C-w>h
 map <LEADER>l <C-w>l
 
 map <up> :res +5<CR>
