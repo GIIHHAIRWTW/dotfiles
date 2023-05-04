@@ -3,3 +3,7 @@
 	name = Li Haotian
 [core]
 	editor = nvim
+[color]
+    branch = auto
+    diff = auto
+    status = auto

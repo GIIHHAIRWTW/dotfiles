@@ -1,14 +1,12 @@
-unsetopt PROMPT_SP PROMPT_CR
-
 # Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
 # Initialization code that may require console input (password prompts, [y/n]
 # confirmations, etc.) must go above this block; everything else may go below.
 if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
   source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
 fi
+
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
-echo "Welcome Li Haotian!"
 
 # Path to your oh-my-zsh installation.
 export ZSH="$HOME/.oh-my-zsh"
@@ -80,8 +78,8 @@ ZSH_THEME="powerlevel10k/powerlevel10k"
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(
-    git
-    zsh-autosuggestions
+	git
+	zsh-autosuggestions
 )
 
 source $ZSH/oh-my-zsh.sh
@@ -111,6 +109,7 @@ source $ZSH/oh-my-zsh.sh
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
+
 alias sz="source ~/.zshrc"
 alias ll="ls -al"
 alias n="neofetch"
@@ -121,7 +120,7 @@ alias l="lolcat"
 alias cm="cmatrix"
 alias u="yay"
 alias gh="cd ~ && clear"
-alias cc="rm -rf ~/.cache"
+alias cC="rm -rf ~/.cache"
 alias yc="yay -Scc"
 alias pc="sudo pacman -Scc"
 alias up="cd .."
@@ -130,18 +129,26 @@ alias rb="reboot"
 alias cip="curl cip.cc"
 alias cy="curl -vv www.youtube.com"
 
-alias git-log="git log --pretty=oneline --all --graph --abbrev-commit"
+alias grep="grep --color=auto"
+
+alias glog="git log --pretty=oneline --all --graph --abbrev-commit"
 alias gis="git status"
-alias gia="git add"
-alias gic="git commit"
 alias 'git log'="git log --all --graph --decorate"
+alias ga="git add ."
+alias gc="git commit -m"
+alias gac="git add .&&git commit -m"
 
-alias setproxy="export ALL_PROXY=socks5://127.0.0.1:7890 && echo 'SET PROXY SUCCESS!'"
-alias unsetproxy="unset ALL_PROXY && echo 'UNSET PROXY SUCCESS!'"
-setproxy
+alias dk="docker"
 
-export PICO_SDK_PATH="/home/Lee/Downloads/pico-sdk/"
-# export PICO_TOOLCHAIN_PATH="/home/Lee/Downloads/gcc-arm-none-eabi-10.3-2021.10/"
+alias sctl="systemctl"
+
+# Alias Directories
+# hash -d dir_name="dir_path"
+# cd ~dir_name
+hash -d config="~/.config"
+hash -d media="/run/media/Haotian"
+
+export PICO_SDK_PATH="/home/Haotian/Documents/pico_files/pico-sdk/"
 
 # Auto change dir---ranger
 ra() {
@@ -159,7 +166,10 @@ mcd() {
     cd "$1"
 }
 
-source /home/Lee/.oh-my-zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+source /home/Haotian/.oh-my-zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+# source /usr/share/zsh/plugins/zsh-vi-mode/zsh-vi-mode.plugin.zsh
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+
+eval $(thefuck --alias)
