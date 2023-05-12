@@ -112,20 +112,15 @@ source $ZSH/oh-my-zsh.sh
 
 alias sz="source ~/.zshrc"
 alias ll="ls -al"
-alias n="neofetch"
-alias nlc="neofetch | lolcat"
+alias n="neofetch | lolcat"
 alias c="clear"
 alias cls="c && ll"
-alias l="lolcat"
-alias cm="cmatrix"
 alias u="yay"
 alias gh="cd ~ && clear"
-alias cC="rm -rf ~/.cache"
+alias cC="sudo rm -rf ~/.cache/*"
 alias yc="yay -Scc"
-alias pc="sudo pacman -Scc"
+alias du="du -h"
 alias up="cd .."
-alias po="poweroff"
-alias rb="reboot"
 alias cip="curl cip.cc"
 alias cy="curl -vv www.youtube.com"
 
@@ -134,9 +129,7 @@ alias grep="grep --color=auto"
 alias glog="git log --pretty=oneline --all --graph --abbrev-commit"
 alias gis="git status"
 alias 'git log'="git log --all --graph --decorate"
-alias ga="git add ."
-alias gc="git commit -m"
-alias gac="git add .&&git commit -m"
+alias gc="git add .&&git commit -m"
 
 alias dk="docker"
 
@@ -147,8 +140,12 @@ alias sctl="systemctl"
 # cd ~dir_name
 hash -d config="~/.config"
 hash -d media="/run/media/Haotian"
+hash -d V="/home/Haotian/Videos"
+hash -d M="/home/Haotian/Music"
+hash -d Dl="/home/Haotian/Downloads"
+hash -d Dc="/home/Haotian/Documents"
 
-export PICO_SDK_PATH="/home/Haotian/Documents/pico_files/pico-sdk/"
+# export PICO_SDK_PATH="/home/Haotian/Documents/pico_files/pico-sdk/"
 
 # Auto change dir---ranger
 ra() {
@@ -166,10 +163,11 @@ mcd() {
     cd "$1"
 }
 
-source /home/Haotian/.oh-my-zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 # source /usr/share/zsh/plugins/zsh-vi-mode/zsh-vi-mode.plugin.zsh
+source /home/Haotian/.oh-my-zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
 eval $(thefuck --alias)
+alias fk="fuck"
