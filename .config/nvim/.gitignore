@@ -1,2 +1,8 @@
-lua/modules/plugins/custom.lua
-lua/modules/configs/custom
+tt.*
+.tests
+doc/tags
+debug
+.repro
+foo.*
+*.log
+data

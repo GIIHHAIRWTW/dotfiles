@@ -39,6 +39,7 @@ au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g
 noremap = nzz
 noremap - Nzz
 noremap <LEADER> :nohlsearch
+inoremap jk <ESC>
 
 
 map s <nop>
