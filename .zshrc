@@ -67,8 +67,12 @@ alias yc="yay -Scc"
 # export PICO_SDK_PATH="/opt/mylib/pico-sdk"
 export PATH=$PATH:/home/Haotian/.cargo/bin
 
+# Set Terminal's language
+export LANGUAGE=en_US 
+export LANG=en_US.UTF-8 
+
 # Auto change dir---ranger
-ra() {
+f() {
     temp_file="$(mktemp -t "ranger_cd.XXXXXXXXXX")"
     ranger --choosedir="$temp_file" -- "${@:-$PWD}"
     if chosen_dir="$(cat -- "$temp_file")" && [ -n "$chosen_dir" ] && [ "$chosen_dir" != "$PWD" ]; then
