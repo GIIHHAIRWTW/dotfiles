@@ -86,6 +86,10 @@ f() {
     rm -f -- "$temp_file"
 }
 
+gacp() {
+    git add "$1" && git commit -m "$2" && git push
+}
+
 # Make dir and cd
 mcd() {
     mkdir -p "$1"
