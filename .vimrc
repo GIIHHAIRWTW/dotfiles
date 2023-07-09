@@ -1,6 +1,12 @@
+#  __  ____   ____     _____ __  __ ____   ____
+# |  \/  \ \ / /\ \   / /_ _|  \/  |  _ \ / ___|
+# | |\/| |\ V /  \ \ / / | || |\/| | |_) | |
+# | |  | | | |    \ V /  | || |  | |  _ <| |___
+# |_|  |_| |_|     \_/  |___|_|  |_|_| \_\\____|
+#
+
 let mapleader=" "
 syntax on
-
 
 set number
 set relativenumber
@@ -14,8 +20,6 @@ exec "nohlsearch"
 set incsearch
 set ignorecase
 set smartcase
-
-
 
 set nocompatible
 filetype on
@@ -32,73 +36,39 @@ set softtabstop=4
 set foldmethod
 set foldlevel=99
 set autochdir
-au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g'\"" | endif
 
-
-
-noremap = nzz
-noremap - Nzz
 noremap <LEADER> :nohlsearch
 inoremap jk <ESC>
 
-
 map s <nop>
-map S :w<CR>
-map Q :wq<CR>
-map R :source $MYVIMRC<CR>
+map <C-s> :w<CR>
+map <C-q> :wq<CR>
+map <C-r> :source $MYVIMRC<CR>
 map ; :
 
-map 66 :set nosplitright<CR>:vsplit<CR>
-map 67 :set splitright<CR>:vsplit<CR>
-map 76 :set nosplitbelow<CR>:split<CR>
-map 77 :set splitbelow<CR>:split<CR>
+map w< :set nosplitright<CR>:vsplit<CR>
+map w> :set splitright<CR>:vsplit<CR>
+map w^ :set nosplitbelow<CR>:split<CR>
+map wv :set splitbelow<CR>:split<CR>
 
-map <LEADER>k <C-w>k
-map <LEADER>j <C-w>j
-map <LEADER>h <C-w>h
-map <LEADER>l <C-w>l
+map <C-k> <C-w>k
+map <C-j> <C-w>j
+map <C-h> <C-w>h
+map <C-l> <C-w>l
 
 map <up> :res +5<CR>
 map <down> :res -5<CR>
 map <left> :vertical resize-5<CR>
 map <right> :vertical resize+5<CR>
 
-map tn :tabe<CR>
-map t- :-tabnext<CR>
-map t= :+tabnext<CR>
-
-
 call plug#begin('~/.vim/plugged')
 
 Plug 'vim-airline/vim-airline'
 Plug 'connorholyday/vim-snazzy'
-
-" File navigation
-Plug 'scrooloose/nerdtree',{ 'on': 'NERDTreeToggle' }
 Plug 'Xuyuanp/nerdtree-git-plugin'
-
-" Error checking
-Plug 'w0rp/ale'
 
 call plug#end()
 
-
 color snazzy
 let g:SnazzyTransparent = 1
-
-
-" ===
-" === NERDTree
-" ===
-map ff :NERDTreeToggle<CR>
-let NERDTreeMapOpenExpl = ""
-let NERDTreeMapUpdir = ""
-let NERDTreeMapUpdirKeepOpen = ""
-let NERDTreeMapOpenSplit = ""
-let NERDTreeOpenVSplit = ""
-let NERDTreeMapActivateNode = "p"
-let NERDTreeMapOpenInTab = "o"
-let NERDTreeMapPreview = ""
-let NERDTreeMapCloseDir = "n"
-let NERDTreeMapChangeRoot = "y"
 

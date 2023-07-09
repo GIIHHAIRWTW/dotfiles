@@ -4,4 +4,3 @@
 local keymap = vim.keymap
 
 keymap.set("i", "jk", "<Esc>", { noremap = true, silent = true })
-keymap.set("n", ";", ":", { noremap = true, silent = true })

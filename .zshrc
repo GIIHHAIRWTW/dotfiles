@@ -1,59 +1,71 @@
+#  __  ____   ___________  _   _ ____   ____
+# |  \/  \ \ / /__  / ___|| | | |  _ \ / ___|
+# | |\/| |\ V /  / /\___ \| |_| | |_) | |
+# | |  | | | |  / /_ ___) |  _  |  _ <| |___
+# |_|  |_| |_| /____|____/|_| |_|_| \_\\____|
+#
+
+# Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
+# Initialization code that may require console input (password prompts, [y/n]
+# confirmations, etc.) must go above this block; everything else may go below.
 if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
   source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
 fi
 
-# Path to oh-my-zsh installation.
-export ZSH="$HOME/.oh-my-zsh"
+# Lines configured by zsh-newuser-install
+HISTFILE=~/.histfile
+HISTSIZE=1000
+SAVEHIST=1000
+bindkey -e
+# End of lines configured by zsh-newuser-install
+# The following lines were added by compinstall
+zstyle :compinstall filename '/home/Haotian/.zshrc'
 
-ZSH_THEME="powerlevel10k/powerlevel10k"
-plugins=(
-	git
-	zsh-autosuggestions
-)
-source $ZSH/oh-my-zsh.sh
+autoload -Uz compinit
+compinit
+# End of lines added by compinstall
 
 # User configuration
-
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
-# alias ohmyzsh="mate ~/.oh-my-zsh"
-alias sz="source ~/.zshrc"
-alias ll="ls -al"
-alias ne="neofetch | lolcat"
-alias n="neofetch"
+alias apu="sudo ifconfig ap0 up"
+alias apd="sudo ifconfig ap0 down"
 alias c="clear"
 alias cls="c && ll"
-alias u="yay"
-alias gh="cd ~ && clear"
 alias cC="sudo rm -rf ~/.cache/*"
-alias yc="yay -Scc"
-alias du="du -h"
-alias up="cd .."
+alias ct="cd ~/tmp"
 alias cip="curl cip.cc"
 alias cy="curl -vv www.youtube.com"
-
+alias du="du -h"
+alias dir="dir --color=auto"
+alias dk="docker"
+alias gh="cd ~ && clear"
 alias grep="grep --color=auto"
-
+alias gcl="git clone"
 alias glog="git log --pretty=oneline --all --graph --abbrev-commit"
 alias gis="git status"
 alias 'git log'="git log --all --graph --decorate"
 alias gc="git add .&&git commit -m"
-
-alias dk="docker"
 # alias j="joshuto"
+alias ls="ls --color=auto"
+alias ll="ls -al --color=auto"
+alias ne="neofetch | lolcat"
+alias n="neofetch"
 alias nv="nvim"
-alias snv="sudo vim"
-alias apu="sudo ifconfig ap0 up"
-alias apd="sudo ifconfig ap0 down"
-
 alias ss="systemctl status"
 alias sd="systemctl disable"
 alias se="systemctl enable"
 alias sst="systemctl start"
 alias srt="systemctl restart"
 alias ssp="systemctl stop"
+alias sz="source ~/.zshrc"
+alias snv="sudo vim"
+alias u="yay"
+alias up="cd .."
+alias yc="yay -Scc"
 
 # export PICO_SDK_PATH="/opt/mylib/pico-sdk"
+export PATH=$PATH:/home/Haotian/.cargo/bin
 
 # Auto change dir---ranger
 ra() {
@@ -71,11 +83,14 @@ mcd() {
     cd "$1"
 }
 
+# source plugins
+source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
+source /usr/share/zsh-theme-powerlevel10k/powerlevel10k.zsh-theme
+source /usr/share/autojump/autojump.zsh
 # source /usr/share/zsh/plugins/zsh-vi-mode/zsh-vi-mode.plugin.zsh
-source /home/Haotian/.oh-my-zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+# eval $(thefuck --alias)
+# alias fk="fuck"
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
-
-# eval $(thefuck --alias)
-# alias fk="fuck"
