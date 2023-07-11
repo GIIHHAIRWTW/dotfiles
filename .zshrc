@@ -36,6 +36,8 @@ alias cC="sudo rm -rf ~/.cache/*"
 alias ct="cd ~/tmp"
 alias cip="curl cip.cc"
 alias cy="curl -vv www.youtube.com"
+alias cr="cargo run"
+alias cb="cargo build"
 alias du="du -h"
 alias dir="dir --color=auto"
 alias dk="docker"
@@ -77,7 +79,7 @@ export LANGUAGE=en_US
 export LANG=en_US.UTF-8 
 
 # Auto change dir---ranger
-f() {
+ra() {
     temp_file="$(mktemp -t "ranger_cd.XXXXXXXXXX")"
     ranger --choosedir="$temp_file" -- "${@:-$PWD}"
     if chosen_dir="$(cat -- "$temp_file")" && [ -n "$chosen_dir" ] && [ "$chosen_dir" != "$PWD" ]; then
